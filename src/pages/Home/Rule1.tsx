@@ -40,19 +40,19 @@ const Rule1 = (): JSX.Element => {
               {'- 單註：最高賠率 2 倍'}
             </Typography>
             <Typography component={'p'} sx={{ marginBottom: 2, paddingLeft: 2 }}>
-              {'1（小）'}
-              {'2（大）'}
-              {'3（單）'}
-              {'4（雙）'}
+              {'1/2/3/4（小）'}
+              {'6/7/8/9（大）'}
+              {'1/3/7/9（單）'}
+              {'2/4/6/8（雙）'}
             </Typography>
             <Typography component={'p'} sx={{ marginBottom: 2 }}>
               {'- 組合：最高賠率 4 倍'}
             </Typography>
             <Typography component={'p'} sx={{ marginBottom: 2, paddingLeft: 2 }}>
-              {'6（小 + 雙）'}
-              {'7（小 + 單）'}
-              {'8（大 + 雙）'}
-              {'9（大 + 單）'}
+              {'2/4（小 + 雙）'}
+              {'1/3（小 + 單）'}
+              {'6/8（大 + 雙）'}
+              {'7/9（大 + 單）'}
             </Typography>
             <Typography component={'p'} sx={{ marginBottom: 2 }}>
               {'- 龍虎：最高賠率 8 倍'}
