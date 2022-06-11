@@ -59,17 +59,20 @@ const Rule2 = (): JSX.Element => {
                   {'（坐莊）'}
                 </Typography>
               </Typography>
-              <Typography component={'p'} sx={{ paddingBottom: 1 }}>
-                {'為獎池提供資金（獲得更高回報）。'}
+              <Typography component={'p'} sx={{ paddingBottom: 2 }}>
+                {'只需質押一定 USDT 就可以成為莊家，賺取更高收益。。'}
               </Typography>
-              <Typography component={'p'} sx={{ paddingBottom: 1 }}>
-                {'- 最短質押時間為一周。'}
+              <Typography component={'p'} sx={{ marginBottom: 2 }}>
+                {'- 最低質押金額 100 USDT'}
               </Typography>
-              <Typography component={'p'} sx={{ paddingBottom: 1 }}>
-                {'- 質押期滿後可隨時贖回。'}
+              <Typography component={'p'} sx={{ paddingBottom: 2 }}>
+                {'- 質押的 USDT 可隨時贖回。'}
+              </Typography>
+              <Typography component={'p'} sx={{ paddingBottom: 2 }}>
+                {'- 玩家押注的金額會進入資金池，分為7天線性釋放給所有坐莊的玩家。'}
               </Typography>
               <Typography component={'p'}>
-                {'- 按提供的資金比例分取玩家押注的利潤。'}
+                {'- 坐莊的玩家按提供的資金比例分取資金池利潤。'}
               </Typography>
             </Box>
           </Box>

@@ -24,7 +24,9 @@ const ConnectWalletDialog = ({ opened = false, handleClose }: Props) => {
       <DialogTitle>
         連接錢包
       </DialogTitle>
-      <DialogContent dividers>
+      <DialogContent
+        dividers
+      >
         {
           error
             ?

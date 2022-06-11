@@ -1,25 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import {
-  useTheme,
-  Container,
-  Box,
-  Typography,
-  Stack,
-  FormControlLabel,
-  RadioGroup,
-  Radio,
-  TextField,
-  InputAdornment,
-  Button
-} from '@mui/material';
+import React, { useEffect } from 'react';
+import { useTheme, Container, Box, Grid, Stack, Typography } from '@mui/material';
 
 import mainBackground from '../../assets/images/main-background.jpg';
 
 const Hero = (): JSX.Element => {
   const theme = useTheme();
-
-  const [betType, setBetType] = useState(0);
-  const [betAmount, setBetAmount] = useState('100');
 
   useEffect(() => {
     const jarallaxInit = async () => {
@@ -66,74 +51,98 @@ const Hero = (): JSX.Element => {
         }}
       />
       <Container>
-        <Box
-          sx={{
-            padding: 5,
-            borderRadius: 2.5,
-            backgroundColor: theme.palette.background.paper,
-            opacity: .9
-          }}
+        <Grid
+          container
+          spacing={4}
         >
-          <RadioGroup
-            row
-            aria-labelledby="demo-row-radio-buttons-group-label"
-            name="row-radio-buttons-group"
-            defaultValue="1"
-            sx={{
-              marginBottom: 2
-            }}
+          <Grid
+            container
+            item
+            justifyContent="center"
+            alignItems="center"
+            xs={12}
+            md={4}
           >
-            <Stack spacing={1}>
-              <Box>
-                <Typography component={'h6'}>
-                  {'單註：最高賠率 2 倍'}
-                </Typography>
-                <FormControlLabel value="1" control={<Radio />} label="小" />
-                <FormControlLabel value="2" control={<Radio />} label="大" />
-                <FormControlLabel value="3" control={<Radio />} label="單" />
-                <FormControlLabel value="4" control={<Radio />} label="雙" />
-              </Box>
-              <Box>
-                <Typography component={'h6'}>
-                  {'組合：最高賠率 4 倍'}
-                </Typography>
-                <FormControlLabel value="6" control={<Radio />} label="小 + 雙" />
-                <FormControlLabel value="7" control={<Radio />} label="小 + 單" />
-                <FormControlLabel value="8" control={<Radio />} label="大 + 雙" />
-                <FormControlLabel value="9" control={<Radio />} label="大 + 單" />
-              </Box>
-              <Box>
-                <Typography component={'h6'}>
-                  {'龍虎：最高賠率 8 倍'}
-                </Typography>
-                <FormControlLabel value="0" control={<Radio />} label="龍" />
-                <FormControlLabel value="5" control={<Radio />} label="虎" />
-              </Box>
+            <Stack>
+              <Typography
+                variant="h2"
+                sx={{
+                  color: 'common.white',
+                  fontWeight: 900,
+                }}
+              >
+                {'2.8M+'}
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 900,
+                  color: 'common.white',
+                }}
+              >
+                {'坐莊資金'}
+              </Typography>
             </Stack>
-          </RadioGroup>
-          <TextField
-            type="number"
-            value={ betAmount }
-            onChange={ (event: React.ChangeEvent<HTMLInputElement>) => { setBetAmount(event.target.value); } }
-            InputProps={{
-              endAdornment: <InputAdornment position="end">USDT</InputAdornment>,
-            }}
-            label="押注金額"
-            helperText="押注限額為 100-10000 USDT"
-            size="small"
-            fullWidth
-            sx={{
-              marginBottom: 2
-            }}
-          />
-          <Button
-            variant="contained"
-            size="large"
-            // onClick={ donateAction }
+          </Grid>
+          <Grid
+            container
+            item
+            justifyContent="center"
+            alignItems="center"
+            xs={12}
+            md={4}
           >
-            {'確認押注'}
-          </Button>
-        </Box>
+            <Stack>
+              <Typography
+                variant="h2"
+                sx={{
+                  color: 'common.white',
+                  fontWeight: 900,
+                }}
+              >
+                {'1.6M+'}
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 900,
+                  color: 'common.white',
+                }}
+              >
+                {'累積押注'}
+              </Typography>
+            </Stack>
+          </Grid>
+          <Grid
+            container
+            item
+            justifyContent="center"
+            alignItems="center"
+            xs={12}
+            md={4}
+          >
+            <Stack>
+              <Typography
+                variant="h2"
+                sx={{
+                  color: 'common.white',
+                  fontWeight: 900,
+                }}
+              >
+                {'1.4M+'}
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 900,
+                  color: 'common.white',
+                }}
+              >
+                {'已發獎金'}
+              </Typography>
+            </Stack>
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   );

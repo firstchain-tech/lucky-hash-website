@@ -18,7 +18,7 @@ const Menus = [
   },
   {
     title: '我要坐莊',
-    href: '/banker',
+    href: '/stake',
   }
 ];
 
