@@ -70,7 +70,7 @@ const Stake = () => {
     }
     const weiAmount = ethers.utils.parseEther(amount);
     if (weiAmount < minStakeAmount) {
-      openAlert('error', '低於最低購買金額！');
+      openAlert('error', '低於最低質押金額！');
       return;
     }
     const balance = await usdtContract!.balanceOf(account);
@@ -88,9 +88,21 @@ const Stake = () => {
     setButtonText('交易進行中...');
     await stakeTx.wait();
 
-    setButtonText('確認押注');
-    openAlert('success', '成功押注。');
+    setButtonText('確認質押');
+    openAlert('success', '成功質押。');
   };
+
+  const [userInfo, setUserInfo] = useState(null);
+
+  useEffect(() => {
+    const timer = setTimeout(async () => {
+      const userInfo = await lotteryContract!.users(account);
+      if (userInfo) {
+        setUserInfo(userInfo);
+      }
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <Layout colorInvert={true}>
@@ -176,11 +188,41 @@ const Stake = () => {
                   <Button
                     variant="contained"
                     size="large"
+                    onClick={stakeAction}
                   >
                     {buttonText}
                   </Button>
                 </TabPanel>
-                <TabPanel value="1"></TabPanel>
+                <TabPanel value="1">
+                  <Typography
+                    variant={'h4'}
+                    gutterBottom
+                    sx={{ marginBottom: 4, fontWeight: 700 }}
+                  >
+                    {'質押金額'}
+                  </Typography>
+                  <Typography
+                    variant={'h4'}
+                    gutterBottom
+                    sx={{ marginBottom: 4, fontWeight: 700 }}
+                  >
+                    {userInfo == null ? 0 : userInfo['shares']}
+                  </Typography>
+                  <Typography
+                    variant={'h4'}
+                    gutterBottom
+                    sx={{ marginBottom: 4, fontWeight: 700 }}
+                  >
+                    {'我的盈利'}
+                  </Typography>
+                  <Typography
+                    variant={'h4'}
+                    gutterBottom
+                    sx={{ marginBottom: 4, fontWeight: 700 }}
+                  >
+                    {userInfo == null ? 0 : userInfo['rewards']}
+                  </Typography>
+                </TabPanel>
               </TabContext>
               <Collapse
                 in={ alert }
