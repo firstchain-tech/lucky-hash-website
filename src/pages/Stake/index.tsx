@@ -53,12 +53,12 @@ const Stake = () => {
   const { account } = useWeb3React();
 
   const usdtContract = useContract(
-    '0x337610d27c682E347C9cD60BD4b3b107C9d34dDd',
+    '0x58D1EAc17bb4F3Ff0D3d5FDd93A31cD372D17681',
     erc20ABI
   );
 
   const lotteryContract = useContract(
-    '0xAf4F51feA817F6B211003a24B57E3CD21E5FD866',
+    '0x87D9f0d89cF97Cb6AcC0d3798f70f3259DD751E8',
     lotteryABI
   );
 
